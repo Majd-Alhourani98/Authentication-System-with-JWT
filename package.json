@@ -1,0 +1,21 @@
+{
+  "name": "authentication-system-with-jwt",
+  "version": "1.0.0",
+  "description": "This repository contains a comprehensive implementation of an authentication system using JSON Web Tokens (JWT) in a Node.js application. It covers user registration, login, and protected routes, ensuring secure access to resources. The project is built with Express.js and MongoDB, demonstrating best practices for handling user authentication and authorization.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "http-errors": "^2.0.0",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
