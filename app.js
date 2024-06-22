@@ -1,18 +1,21 @@
-const express = require("express");
-const morgan = require("morgan");
-const creatError = require("http-errors");
-const dotenv = require("dotenv");
+const express = require('express');
+const morgan = require('morgan');
+const creatError = require('http-errors');
+const dotenv = require('dotenv');
 
 // Importing Routers
-const authRouter = require("./routes/authRoutes");
+const authRouter = require('./routes/authRoutes');
 
 dotenv.config();
 
 const app = express();
 
-app.use("/api/auth", authRouter);
+// lOGGIN WITH MORGAN
+app.use(morgan('dev'));
 
-app.all("*", async (req, res, next) => {
+app.use('/api/auth', authRouter);
+
+app.all('*', async (req, res, next) => {
   // const error = new Error("Not Found");
   // error.status = 404;
   // next(error);
