@@ -2,15 +2,15 @@ const express = require("express");
 const morgan = require("morgan");
 const creatError = require("http-errors");
 const dotenv = require("dotenv");
-const { create } = require("underscore");
+
+// Importing Routers
+const authRouter = require("./routes/authRoutes");
 
 dotenv.config();
 
 const app = express();
 
-app.get("/", async (req, res, next) => {
-  res.send("Hello From Express");
-});
+app.use("/api/auth", authRouter);
 
 app.all("*", async (req, res, next) => {
   // const error = new Error("Not Found");
